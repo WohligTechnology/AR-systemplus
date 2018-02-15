@@ -19,7 +19,8 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-file": {}
+      "cordova-plugin-file": {},
+      "com.wikitude.phonegap.WikitudePlugin": {}
     },
     "platforms": [
       "ios",
