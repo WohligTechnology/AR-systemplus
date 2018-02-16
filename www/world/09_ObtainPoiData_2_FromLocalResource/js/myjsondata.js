@@ -8,29 +8,38 @@ var myJsonData = [{
 	"image": "assets/marker_selected.png"
 }, {
 	"id": "2",
-	"longitude": "73.9316804",
-	"latitude": "18.5197535",
-	"description": "assets/chaipoint-menu.jpg",
+	"longitude": "73.935066",
+	"latitude": "18.518523",
+	"description": "assets/brand-icon.jpg",
 	"label": "Shopping Mall",
-	"name": "Seasons Mall",
+	"name": "Amanora Mall",
 	"image": "assets/marker_selected.png",
 	"image2": "assets/marker_selected.png"
 }, {
 	"id": "3",
 	"longitude": "73.924410",
 	"latitude": "18.516221",
-	"description": "assets/chaipoint-menu.jpg",
+	"description": "assets/food-menu.jpg",
 	"label": "Cafe",
 	"name": "Chai Point",
 	"image": "assets/marker_selected.png",
 	"image2": "assets/marker_selected.png"
 }, {
 	"id": "4",
-	"longitude": "73.926065",
-	"latitude": "18.519236",
-	"description": "assets/chaipoint-menu.jpg",
-	"label": "Apartment Complex",
-	"name": "Trillium Society",
+	"longitude": "73.924431",
+	"latitude": "18.516701",
+	"description": "assets/office.jpg",
+	"label": "Office",
+	"name": "Systems Plus",
+	"image": "assets/marker_selected.png",
+	"image2": "assets/marker_selected.png"
+}, {
+	"id": "4",
+	"longitude": "73.907908",
+	"latitude": "18.538039",
+	"description": "assets/list-movies.jpg",
+	"label": "Movie Theater",
+	"name": "PVR Cinema",
 	"image": "assets/marker_selected.png",
 	"image2": "assets/marker_selected.png"
 }];

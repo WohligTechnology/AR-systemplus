@@ -91,7 +91,7 @@ var World = {
 		World.currentMarker = marker;
 		// update panel values
 		$("#poi-detail-title").html(marker.poiData.title);
-		$("#poi-detail-description").html(marker.poiData.description);
+		// $("#poi-detail-description").html(marker.poiData.description);
 		$("#poi-detail-description").append('<img src="' + marker.poiData.description + '" />');
 
 

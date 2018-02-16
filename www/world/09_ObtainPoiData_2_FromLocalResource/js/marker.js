@@ -23,7 +23,7 @@ function Marker(poiData) {
 
     this.markerDrawable_idle = new AR.ImageResource("assets/marker_idle.png");
     this.markerDrawable_selected = new AR.ImageResource("assets/marker_selected.png");
-    this.markerDrawable_idle = new AR.ImageDrawable(this.markerDrawable_idle, 3.5, {
+    this.markerDrawable_idle = new AR.ImageDrawable(this.markerDrawable_idle, 3, {
         zOrder: 0,
         opacity: 1.0,
         /*
@@ -33,7 +33,7 @@ function Marker(poiData) {
     });
 
     // create an AR.ImageDrawable for the marker in selected state
-    this.markerDrawable_selected = new AR.ImageDrawable(this.markerDrawable_selected, 3.5, {
+    this.markerDrawable_selected = new AR.ImageDrawable(this.markerDrawable_selected, 3, {
         zOrder: 0,
         opacity: 0.0,
         onClick: null
@@ -47,7 +47,7 @@ function Marker(poiData) {
         },
         style: {
             textColor: '#FFFFFF',
-            fontSize: '14px',
+            fontSize: '12px',
             textTransform: 'uppercase'
         }
     });

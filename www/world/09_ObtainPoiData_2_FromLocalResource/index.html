@@ -80,47 +80,14 @@
             <!-- content of POI detail page, you may also add thumbnails etc. here if you like -->
             <div data-role="content">
 
+                (
+                <a id="poi-detail-distance"></a>
+                )
                 <!-- title -->
                 <h3 id="poi-detail-title"></h3>
 
                 <!-- description -->
                 <h4 id="poi-detail-description"></h4>
-
-                <!-- distance -->
-                <h4>Approx Distance:
-                    <a id="poi-detail-distance"></a>
-                </h4>
-            </div>
-        </div>
-
-
-
-        <!-- range panel -->
-        <div data-role="panel" id="panel-distance" data-position="left" data-display="overlay" style="background-color:#F0F0F0;"
-            data-theme="c">
-
-            <!-- header with close button -->
-            <div data-role="header" data-theme="c">
-                <h1>Range</h1>
-                <a href="#header" data-rel="close">Close</a>
-            </div>
-
-            <!-- distance information, calculated/updated in code  -->
-            <div data-role="content">
-
-                <!-- Range in m/km-->
-                <h4> Range:
-                    <a id="panel-distance-value"></a>
-                </h4>
-
-                <!-- Amount of visible places -->
-                <h4> Visible:
-                    <a id="panel-distance-places"></a>
-                </h4>
-
-                <!-- default slider -->
-                <input id="panel-distance-range" type="range" data-highlight="true" name="rangeSlider" min="0" max="100" value="100" data-show-value="false"
-                    step="5" data-popup-enabled="false">
             </div>
         </div>
     </div>
