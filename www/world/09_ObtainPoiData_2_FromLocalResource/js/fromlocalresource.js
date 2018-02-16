@@ -26,7 +26,7 @@ var World = {
 		World.markerDrawable_idle = new AR.ImageResource("assets/marker_idle.png");
 		World.markerDrawable_selected = new AR.ImageResource("assets/marker_selected.png");
 		World.markerDrawable_directionIndicator = new AR.ImageResource("assets/indi.png");
-
+		var loaded = false;
 		// loop through POI-information and create an AR.GeoObject (=Marker) per POI
 		for (var currentPlaceNr = 0; currentPlaceNr < poiData.length; currentPlaceNr++) {
 			var singlePoi = {
@@ -37,7 +37,7 @@ var World = {
 				"title": poiData[currentPlaceNr].name,
 				"description": poiData[currentPlaceNr].description
 			};
-
+			AR.logger.debug("Added Marker2" + poiData[currentPlaceNr].id + "latitude-" + poiData[currentPlaceNr].latitude + "longitude-" + poiData[currentPlaceNr].longitude + "alt" + poiData[currentPlaceNr].altitude);
 			World.markerList.push(new Marker(singlePoi));
 		}
 
@@ -92,7 +92,26 @@ var World = {
 			World.currentMarker.setDeselected(World.currentMarker);
 		}
 	},
+	// bringPlacesToUser: function bringPlacesToUserFn(poiData, latitude, longitude) {
+	// 	console.log(myJsonData[0].latitude);
+	// 	console.log(myJsonData[0].longitude);
 
+	// 	for (var i = 0; i < poiData.length; i++) {
+	// 		poiData[i].latitude = latitude + (Math.random() / 5 - 0.1);
+	// 		poiData[i].longitude = longitude + (Math.random() / 5 - 0.1);
+	// 		console.log(myJsonData);
+	// 		/* 
+	// 		Note: setting altitude to '0'
+	// 		will cause places being shown below / above user,
+	// 		depending on the user 's GPS signal altitude. 
+	// 			Using this contant will ignore any altitude information and always show the places on user-level altitude
+	// 		*/
+	// 		poiData[i].altitude = AR.CONST.UNKNOWN_ALTITUDE;
+	// 		AR.logger.debug("Added Marker2" + "latitude1" + latitude + "longitude1" + longitude + "poiData" + poiData);
+	// 	}
+
+	// 	return poiData;
+	// },
 	/*
 		In case the data of your ARchitect World is static the content should be stored within the application. 
 		Create a JavaScript file (e.g. myJsonData.js) where a globally accessible variable is defined.
@@ -102,7 +121,7 @@ var World = {
 	// request POI data
 	requestDataFromLocal: function requestDataFromLocalFn(lat, lon) {
 
-		// var poisNearby = Helper.bringPlacesToUser(myJsonData, lat, lon);
+		// var poisNearby = World.bringPlacesToUser(myJsonData, lat, lon);
 		// World.loadPoisFromJsonData(poisNearby);
 
 		/*
@@ -113,30 +132,32 @@ var World = {
 		World.loadPoisFromJsonData(myJsonData);
 		console.log(myJsonData);
 	}
-
 };
 
-var Helper = {
+// console.log(myJsonData);
 
-	/* 
-		For demo purpose only, this method takes poi data and a center point (latitude, longitude) to relocate the given places randomly around the user
-	*/
-	bringPlacesToUser: function bringPlacesToUserFn(poiData, latitude, longitude) {
-		for (var i = 0; i < poiData.length; i++) {
-			poiData[i].latitude = latitude + (Math.random() / 5 - 0.1);
-			poiData[i].longitude = longitude + (Math.random() / 5 - 0.1);
-			/* 
-			Note: setting altitude to '0'
-			will cause places being shown below / above user,
-			depending on the user 's GPS signal altitude. 
-				Using this contant will ignore any altitude information and always show the places on user-level altitude
-			*/
-			poiData[i].altitude = AR.CONST.UNKNOWN_ALTITUDE;
-			AR.logger.debug("Added Marker2" + "latitude1" + latitude + "longitude1" + longitude + "poiData" + poiData);
-		}
-		return poiData;
-	}
-}
+// var Helper = {
+
+// 	/* 
+// 		For demo purpose only, this method takes poi data and a center point (latitude, longitude) to relocate the given places randomly around the user
+// 	*/
+// 	bringPlacesToUser: function bringPlacesToUserFn(poiData, latitude, longitude, myJsonData) {
+// 		for (var i = 0; i < poiData.length; i++) {
+// 			poiData[i].latitude = latitude + (Math.random() / 5 - 0.1);
+// 			poiData[i].longitude = longitude + (Math.random() / 5 - 0.1);
+// 			/* 
+// 			Note: setting altitude to '0'
+// 			will cause places being shown below / above user,
+// 			depending on the user 's GPS signal altitude. 
+// 				Using this contant will ignore any altitude information and always show the places on user-level altitude
+// 			*/
+// 			poiData[i].altitude = AR.CONST.UNKNOWN_ALTITUDE;
+// 			console.log(myJsonData);
+// 			AR.logger.debug("Added Marker2" + "latitude1" + latitude + "longitude1" + longitude + "poiData" + poiData);
+// 		}
+// 		return poiData;
+// 	}
+// }
 
 AR.logger.activateDebugMode();
 /* forward locationChanges to custom function */
