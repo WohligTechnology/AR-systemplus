@@ -15,8 +15,8 @@ function Marker(poiData) {
 
 
     // create the AR.GeoLocation from the poi data
-    var markerLocations = new AR.GeoLocation(poiData.latitude, poiData.longitude);
-    var markerLocation = new AR.RelativeLocation(null, poiData.latitude, poiData.longitude);
+    var markerLocation = new AR.GeoLocation(poiData.latitude, poiData.longitude);
+    // var markerLocation = new AR.RelativeLocation(null, poiData.latitude, poiData.longitude);
     // create an AR.ImageDrawable for the marker in idle state
     this.markerDrawable_idle = new AR.ImageDrawable(World.markerDrawable_idle, 2.5, {
         zOrder: 0,
@@ -35,7 +35,7 @@ function Marker(poiData) {
     });
 
     // create an AR.Label for the marker's title 
-    this.titleLabel = new AR.Label(poiData.title.trunc(10), 1, {
+    this.titleLabel = new AR.Label(poiData.title.trunc(15), 1, {
         zOrder: 1,
         translate: {
             y: 0.55
@@ -47,7 +47,7 @@ function Marker(poiData) {
     });
 
     // create an AR.Label for the marker's description
-    this.descriptionLabel = new AR.Label(poiData.description.trunc(15), 0.8, {
+    this.descriptionLabel = new AR.Label(poiData.description.trunc(20), 0.8, {
         zOrder: 1,
         translate: {
             y: -0.55
