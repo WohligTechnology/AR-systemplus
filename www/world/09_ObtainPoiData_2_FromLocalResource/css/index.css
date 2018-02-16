@@ -1,0 +1,47 @@
+.ui-panel-inner {
+    padding: 0;
+}
+
+.ui-bar-c {
+    border: 1px solid #053e77;
+    background: #053e77 !important;
+    color: white;
+    font-weight: 700;
+    text-shadow: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.ui-btn {
+    background: transparent !important;
+    color: white;
+    text-shadow: none;
+    border: none;
+    box-shadow: none !important;
+    font-weight: normal;
+}
+
+.ui-btn-inner {
+    border: none !important;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.ui-content {
+    background: white !important;
+}
+
+.ui-header+.ui-content {
+    overflow-y: scroll;
+    height: calc(100vh - 43px);
+}
+
+.ui-body-c .ui-link {
+    color: #e9214a !important;
+    font-weight: 700 !important;
+    font-size: 14px !important;
+}
+
+#poi-detail-description img {
+    width: 100%;
+}
