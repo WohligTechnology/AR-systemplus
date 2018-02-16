@@ -4,7 +4,7 @@ var myJsonData = [{
 	"latitude": "18.514167",
 	"description": "assets/chaipoint-menu.jpg",
 	"label": "Restaurant",
-	"name": "Deccan Harvest",
+	"name": "Deccan",
 	"image": "assets/marker_selected.png"
 }, {
 	"id": "2",
