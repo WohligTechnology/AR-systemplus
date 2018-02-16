@@ -91,8 +91,8 @@ var World = {
 		World.currentMarker = marker;
 		// update panel values
 		$("#poi-detail-title").html(marker.poiData.title);
-		// $("#poi-detail-description").html(marker.poiData.description);
-		$("#poi-detail-description").append('<img src="' + marker.poiData.description + '" />');
+
+		$("#poi-detail-description").attr("src", marker.poiData.description);
 
 
 		/* It's ok for AR.Location subclass objects to return a distance of `undefined`. In case such a distance was calculated when all distances were queried in `updateDistanceToUserValues`, we recalcualte this specific distance before we update the UI. */
