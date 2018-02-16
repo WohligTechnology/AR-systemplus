@@ -40,8 +40,13 @@
     color: #e9214a !important;
     font-weight: 700 !important;
     font-size: 14px !important;
+    float: right !important;
 }
 
 #poi-detail-description img {
     width: 100%;
+}
+
+#poi-detail-title {
+    margin-top: 0;
 }
