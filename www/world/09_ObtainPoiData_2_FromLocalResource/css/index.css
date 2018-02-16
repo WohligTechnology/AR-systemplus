@@ -31,9 +31,8 @@
     background: white !important;
 }
 
-.ui-header+.ui-content {
+.ui-content {
     overflow-y: scroll;
-    height: calc(100vh - 43px);
 }
 
 .ui-body-c .ui-link {
