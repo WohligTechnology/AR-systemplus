@@ -11,7 +11,7 @@ var myJsonData = [{
 	"longitude": "73.935066",
 	"latitude": "18.518523",
 	"description": "assets/amanora.jpg",
-	"label": "Shopping Mall",
+	"label": "Shopping",
 	"name": "Amanora Mall",
 	"image": "assets/marker_selected.png",
 	"image2": "assets/marker_selected.png"
