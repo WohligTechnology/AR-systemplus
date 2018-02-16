@@ -15,8 +15,8 @@ function Marker(poiData) {
 
 
     // create the AR.GeoLocation from the poi data
-    var markerLocation = new AR.GeoLocation(poiData.latitude, poiData.longitude, poiData.altitude);
-
+    var markerLocations = new AR.GeoLocation(poiData.latitude, poiData.longitude);
+    var markerLocation = new AR.RelativeLocation(null, poiData.latitude, poiData.longitude);
     // create an AR.ImageDrawable for the marker in idle state
     this.markerDrawable_idle = new AR.ImageDrawable(World.markerDrawable_idle, 2.5, {
         zOrder: 0,
