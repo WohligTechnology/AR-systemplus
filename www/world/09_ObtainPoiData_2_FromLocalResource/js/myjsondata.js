@@ -1,7 +1,7 @@
 var myJsonData = [{
 	"id": "1",
-	"longitude": "73.9244793",
-	"latitude": "18.5168014",
+	"longitude": "73.927447",
+	"latitude": "18.514167",
 	"description": "Aditi Garden",
 	"altitude": "100.0",
 	"name": "Aditi Garden",
