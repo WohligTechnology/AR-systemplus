@@ -92,26 +92,26 @@ var World = {
 			World.currentMarker.setDeselected(World.currentMarker);
 		}
 	},
-	bringPlacesToUser: function bringPlacesToUserFn(poiData, latitude, longitude) {
-		console.log(myJsonData[0].latitude);
-		console.log(myJsonData[0].longitude);
+	// bringPlacesToUser: function bringPlacesToUserFn(poiData, latitude, longitude) {
+	// 	console.log(myJsonData[0].latitude);
+	// 	console.log(myJsonData[0].longitude);
 
-		for (var i = 0; i < poiData.length; i++) {
-			poiData[i].latitude = latitude + (Math.random() / 5 - 0.1);
-			poiData[i].longitude = longitude + (Math.random() / 5 - 0.1);
-			console.log(myJsonData);
-			/* 
-			Note: setting altitude to '0'
-			will cause places being shown below / above user,
-			depending on the user 's GPS signal altitude. 
-				Using this contant will ignore any altitude information and always show the places on user-level altitude
-			*/
-			poiData[i].altitude = AR.CONST.UNKNOWN_ALTITUDE;
-			AR.logger.debug("Added Marker2" + "latitude1" + latitude + "longitude1" + longitude + "poiData" + poiData);
-		}
+	// 	for (var i = 0; i < poiData.length; i++) {
+	// 		poiData[i].latitude = latitude + (Math.random() / 5 - 0.1);
+	// 		poiData[i].longitude = longitude + (Math.random() / 5 - 0.1);
+	// 		console.log(myJsonData);
+	// 		/* 
+	// 		Note: setting altitude to '0'
+	// 		will cause places being shown below / above user,
+	// 		depending on the user 's GPS signal altitude. 
+	// 			Using this contant will ignore any altitude information and always show the places on user-level altitude
+	// 		*/
+	// 		poiData[i].altitude = AR.CONST.UNKNOWN_ALTITUDE;
+	// 		AR.logger.debug("Added Marker2" + "latitude1" + latitude + "longitude1" + longitude + "poiData" + poiData);
+	// 	}
 
-		return poiData;
-	},
+	// 	return poiData;
+	// },
 	/*
 		In case the data of your ARchitect World is static the content should be stored within the application. 
 		Create a JavaScript file (e.g. myJsonData.js) where a globally accessible variable is defined.
