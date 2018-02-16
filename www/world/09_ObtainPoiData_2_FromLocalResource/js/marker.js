@@ -18,7 +18,12 @@ function Marker(poiData) {
     var markerLocation = new AR.GeoLocation(poiData.latitude, poiData.longitude);
     // var markerLocation = new AR.RelativeLocation(null, poiData.latitude, poiData.longitude);
     // create an AR.ImageDrawable for the marker in idle state
-    this.markerDrawable_idle = new AR.ImageDrawable(World.markerDrawable_idle, 2.5, {
+    // World.markerDrawable_idle = new AR.ImageResource("assets/marker_idle.png");
+    // World.markerDrawable_selected = new AR.ImageResource("assets/marker_selected.png");
+
+    this.markerDrawable_idle = new AR.ImageResource("assets/marker_idle.png");
+    this.markerDrawable_selected = new AR.ImageResource("assets/marker_selected.png");
+    this.markerDrawable_idle = new AR.ImageDrawable(this.markerDrawable_idle, 3.5, {
         zOrder: 0,
         opacity: 1.0,
         /*
@@ -28,26 +33,36 @@ function Marker(poiData) {
     });
 
     // create an AR.ImageDrawable for the marker in selected state
-    this.markerDrawable_selected = new AR.ImageDrawable(World.markerDrawable_selected, 2.5, {
+    this.markerDrawable_selected = new AR.ImageDrawable(this.markerDrawable_selected, 3.5, {
         zOrder: 0,
         opacity: 0.0,
         onClick: null
     });
 
     // create an AR.Label for the marker's title 
-    this.titleLabel = new AR.Label(poiData.title.trunc(15), 1, {
+    this.titleLabel = new AR.Label(poiData.title.trunc(22), 1, {
         zOrder: 1,
         translate: {
             y: 0.55
         },
         style: {
             textColor: '#FFFFFF',
-            fontStyle: AR.CONST.FONT_STYLE.BOLD
+            fontSize: '14px',
+            textTransform: 'uppercase'
+        }
+    });
+    // create an AR.Label for the marker's description
+    this.descriptionLabel = new AR.Label(poiData.description.trunc(20), 0.8, {
+        zOrder: 1,
+        translate: {
+            y: -0.55
+        },
+        style: {
+            textColor: '#FFFFFF'
         }
     });
 
-    // create an AR.Label for the marker's description
-    this.descriptionLabel = new AR.Label(poiData.description.trunc(20), 0.8, {
+    this.labelText = new AR.Label(poiData.label.trunc(22), 0.8, {
         zOrder: 1,
         translate: {
             y: -0.55
@@ -64,14 +79,42 @@ function Marker(poiData) {
         enabled: false,
         verticalAnchor: AR.CONST.VERTICAL_ANCHOR.TOP
     });
+    /*
+        The representation of an AR.GeoObject in the radar is defined in its drawables set (second argument of AR.GeoObject constructor). 
+        Once drawables.radar is set the object is also shown on the radar e.g. as an AR.Circle
+    */
+    this.radarCircle = new AR.Circle(0.03, {
+        horizontalAnchor: AR.CONST.HORIZONTAL_ANCHOR.CENTER,
+        opacity: 0.8,
+        style: {
+            fillColor: "#ffffff"
+        }
+    });
 
+    /*
+        Additionally create circles with a different color for the selected state.
+    */
+    this.radarCircleSelected = new AR.Circle(0.05, {
+        horizontalAnchor: AR.CONST.HORIZONTAL_ANCHOR.CENTER,
+        opacity: 0.8,
+        style: {
+            fillColor: "#0066ff"
+        }
+    });
+
+    this.radardrawables = [];
+    this.radardrawables.push(this.radarCircle);
+
+    this.radardrawablesSelected = [];
+    this.radardrawablesSelected.push(this.radarCircleSelected);
     /*
      Create the AR.GeoObject with the drawable objects and define the AR.ImageDrawable as an indicator target on the marker AR.GeoObject. The direction indicator is displayed automatically when necessary. AR.Drawable subclasses (e.g. AR.Circle) can be used as direction indicators.
      */
     this.markerObject = new AR.GeoObject(markerLocation, {
         drawables: {
-            cam: [this.markerDrawable_idle, this.markerDrawable_selected, this.titleLabel, this.descriptionLabel],
-            indicator: this.directionIndicatorDrawable
+            cam: [this.markerDrawable_idle, this.markerDrawable_selected, this.titleLabel, this.labelText],
+            indicator: this.directionIndicatorDrawable,
+            radar: this.radardrawables
         }
     });
 
