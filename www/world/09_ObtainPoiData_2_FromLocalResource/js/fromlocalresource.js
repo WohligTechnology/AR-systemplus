@@ -43,7 +43,7 @@ var World = {
 				"image": poiData[currentPlaceNr].image,
 				"image2": poiData[currentPlaceNr].image2
 			};
-			AR.logger.debug("Added Marker2" + poiData[currentPlaceNr].id + "latitude-" + poiData[currentPlaceNr].image + "longitude-" + poiData[currentPlaceNr].image2 + "alt" + poiData[currentPlaceNr].altitude);
+			// AR.logger.debug("Added Marker2" + poiData[currentPlaceNr].id + "latitude-" + poiData[currentPlaceNr].image + "longitude-" + poiData[currentPlaceNr].image2 + "alt" + poiData[currentPlaceNr].altitude);
 			World.markerList.push(new Marker(singlePoi));
 		}
 
@@ -71,7 +71,7 @@ var World = {
 		if (!World.initiallyLoadedData) {
 			World.requestDataFromLocal(lat, lon);
 			World.initiallyLoadedData = true;
-			AR.logger.debug("Added Marker" + "latitude" + lat + "longitude" + lon);
+			// AR.logger.debug("Added Marker" + "latitude" + lat + "longitude" + lon);
 		}
 
 	},
@@ -291,7 +291,7 @@ var World = {
 // 	}
 // }
 
-AR.logger.activateDebugMode();
+// AR.logger.activateDebugMode();
 /* forward locationChanges to custom function */
 AR.context.onLocationChanged = World.locationChanged;
 
