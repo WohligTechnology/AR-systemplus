@@ -39,6 +39,7 @@ var World = {
 				"altitude": parseFloat(poiData[currentPlaceNr].altitude),
 				"title": poiData[currentPlaceNr].name,
 				"description": poiData[currentPlaceNr].description,
+				"btn": poiData[currentPlaceNr].btn,
 				"label": poiData[currentPlaceNr].label,
 				"image": poiData[currentPlaceNr].image,
 				"image2": poiData[currentPlaceNr].image2
@@ -91,6 +92,7 @@ var World = {
 		World.currentMarker = marker;
 		// update panel values
 		$("#poi-detail-title").html(marker.poiData.title);
+		$("#poi-detail-btn").html(marker.poiData.btn);
 
 		$("#poi-detail-description").attr("src", marker.poiData.description);
 

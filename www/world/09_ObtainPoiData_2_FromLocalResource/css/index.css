@@ -32,7 +32,8 @@
 }
 
 .ui-content {
-    overflow-y: scroll;
+    overflow: auto;
+    height: calc(100vh - 80px);
 }
 
 .ui-body-c .ui-link {
